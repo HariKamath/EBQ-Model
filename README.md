@@ -2,14 +2,14 @@
 Paper Model for Determining Economic Order Quantity
 products = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
 
-months = ["Apr", "May"]
+**months** = ["Apr", "May"]
 
-demand = {("Apr","BLEND"):120,("May","BLEND"):130,
+**demand** = {("Apr","BLEND"):120,("May","BLEND"):130,
           ("Apr","RICEBRAN"):270,("May","RICEBRAN"):260,
           ("Apr","SOYA"):3000,("May","SOYA"):4000,
           ("Apr","PALM"):4000,("May","PALM"):5000}
 
-changeover = {("BLEND","RICEBRAN"):4401,
+**changeover** = {("BLEND","RICEBRAN"):4401,
               ("BLEND","SOYA"):4401,
               ("BLEND","PALM"):4401,
               ("RICEBRAN","BLEND"):4401,
@@ -22,7 +22,7 @@ changeover = {("BLEND","RICEBRAN"):4401,
               ("PALM","RICEBRAN"):2901,
               ("PALM","SOYA"):2901}
 			  
-sequences = ('BLEND', 'RICEBRAN')
+**sequences** = ('BLEND', 'RICEBRAN')
 ('BLEND', 'SOYA')
 ('BLEND', 'PALM')
 ('RICEBRAN', 'BLEND')
@@ -83,7 +83,7 @@ sequences = ('BLEND', 'RICEBRAN')
 ('PALM', 'SOYA', 'BLEND', 'RICEBRAN')
 ('PALM', 'SOYA', 'RICEBRAN', 'BLEND')
 
-Changeover_cost = ('BLEND', 'RICEBRAN')  :  4401
+**Changeover_cost** = ('BLEND', 'RICEBRAN')  :  4401
 ('BLEND', 'SOYA')  :  4401
 ('BLEND', 'PALM')  :  4401
 ('RICEBRAN', 'BLEND')  :  4401
@@ -145,7 +145,7 @@ Changeover_cost = ('BLEND', 'RICEBRAN')  :  4401
 ('PALM', 'SOYA', 'RICEBRAN', 'BLEND')  :  10703
 
 #List of sequences which start with a given oil
-First = {('BLEND', 'SOYA') : 'BLEND', 
+**First** = {('BLEND', 'SOYA') : 'BLEND', 
          ('BLEND', 'PALM') : 'BLEND',
          ('BLEND', 'RICEBRAN', 'SOYA') : 'BLEND', 
          ....., 
@@ -159,7 +159,7 @@ First = {('BLEND', 'SOYA') : 'BLEND',
 
 
 #List of sequences which end with a given oil
-End = {('RICEBRAN', 'BLEND') : 'BLEND', 
+**End** = {('RICEBRAN', 'BLEND') : 'BLEND', 
        ('SOYA', 'BLEND'), ('SOYA', 'PALM', 'BLEND') : 'SOYA',
        .....,
        ('PALM', 'SOYA', 'RICEBRAN', 'BLEND') : 'PALM',
@@ -171,7 +171,7 @@ End = {('RICEBRAN', 'BLEND') : 'BLEND',
        .....}
 
 #Selection of sequence for a month
-select = {sequence : 0}
+**select** = {sequence : 0}
 
 #Initial Closing Inventory
 Q(month[0],product) == I(month[0],product) + demand ([month[0],product)
