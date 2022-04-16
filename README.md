@@ -10,6 +10,15 @@
           ("Apr","SOYA"):3000,("May","SOYA"):4000,
           ("Apr","PALM"):4000,("May","PALM"):5000}
 
+#Inventory holding cost of all oil considered equal without considering oil cost
+	  
+**Invholdingcost** = {"BLEND":100,
+		      "RICEBRAN":100,
+		      "SOYA":100,
+		      "PALM": 100,}
+
+#Changeover costs
+
 **changeover** = {("BLEND","RICEBRAN"):4401,
               ("BLEND","SOYA"):4401,
               ("BLEND","PALM"):4401,
@@ -199,4 +208,4 @@
 
 #Objective Function
 
-**objective = Minimize(select(month,sequence) * changeover_cost(sequence) + I(month,product) * Invholding cost**
+**objective = Minimize(select(month,sequence) * changeover_cost(sequence) + I(month,product) * Invholdingcost**
