@@ -195,7 +195,7 @@
 
 #Constraint on Monthly Closing Inventory
 
-**Q(month,product) + I(month-1,product) == I(month[0],product) + demand (month, product)**
+**Q(month,product) + I(month-1,product) == I(month,product) + demand (month, product)**
 
 #Constraint to Manufacture only when the product is included in the sequence
 
