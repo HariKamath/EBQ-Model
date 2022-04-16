@@ -1,5 +1,5 @@
 # EBQ-Model
-Paper Model for Determining Economic Order Quantity
+**Paper Model for Determining Economic Order Quantity**
 
 **products** = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
 
