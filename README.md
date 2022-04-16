@@ -93,6 +93,9 @@
 ('PALM', 'SOYA', 'BLEND', 'RICEBRAN')
 ('PALM', 'SOYA', 'RICEBRAN', 'BLEND')
 
+
+#Changeover cost for each sequence
+
 **Changeover_cost** = ('BLEND', 'RICEBRAN')  :  4401
 ('BLEND', 'SOYA')  :  4401
 ('BLEND', 'PALM')  :  4401
