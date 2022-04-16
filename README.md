@@ -1,6 +1,7 @@
 # EBQ-Model
 Paper Model for Determining Economic Order Quantity
-products = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
+
+**products** = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
 
 **months** = ["Apr", "May"]
 
@@ -145,6 +146,7 @@ products = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
 ('PALM', 'SOYA', 'RICEBRAN', 'BLEND')  :  10703
 
 #List of sequences which start with a given oil
+
 **First** = {('BLEND', 'SOYA') : 'BLEND', 
          ('BLEND', 'PALM') : 'BLEND',
          ('BLEND', 'RICEBRAN', 'SOYA') : 'BLEND', 
@@ -159,6 +161,7 @@ products = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
 
 
 #List of sequences which end with a given oil
+
 **End** = {('RICEBRAN', 'BLEND') : 'BLEND', 
        ('SOYA', 'BLEND'), ('SOYA', 'PALM', 'BLEND') : 'SOYA',
        .....,
@@ -171,22 +174,29 @@ products = ["BLEND", "RICEBRAN", "SOYA", "PALM"]
        .....}
 
 #Selection of sequence for a month
+
 **select** = {sequence : 0}
 
 #Initial Closing Inventory
+
 Q(month[0],product) == I(month[0],product) + demand ([month[0],product)
 
 #Constraint on Monthly Closing Inventory
+
 Q(month,product) + I(month-1,product) ==I(month[0],product) + demand (month, product)
 
 #Constraint to Manufacture only when the product is included in the sequence
+
 select(month,sequence) * Q(month,product element of sequence) == Q(month,product element of sequence)
 
 #Constraint to Select only 1 sequence for a month
+
 SUM(select(month,sequence)) for each month == 1
 
 #Constraint for Changeover continuing across months. This logic is not included in the python.
+
 First(month, selected sequence) == End(month+1, selected sequence) 
 
 #Objective Function
+
 objective = Minimize(select(month,sequence) * changeover_cost(sequence) + I(month,product) * Invholding cost
